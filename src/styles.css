@@ -1,0 +1,913 @@
+body,
+html {
+  font-family: "Montserrat";
+  caret-color: transparent;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+header {
+  background-image: url("/images/background_picture.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  font-size: 100px;
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  font-size: 16px;
+  margin-bottom: 4%;
+  border-style: none;
+  border: solid 1px;
+  border-color: black;
+  border-color: rgb(122, 122, 122);
+  padding: 10px;
+  background-color: #f4f4f4;
+  caret-color: auto;
+}
+
+header p {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+}
+nav li {
+  margin-top: 30px;
+}
+
+/* -----------------SELCTORS BY CLASS------------------------ */
+
+.hidden {
+  display: none;
+}
+.faded {
+  visibility: hidden;
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.slider {
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  transition: transform 0.8s;
+}
+
+.modal {
+  position: absolute;
+  border: solid 1px black;
+  border-radius: 15px;
+  background-color: white;
+  min-height: 80%;
+  width: 80%;
+  left: 10%;
+  top: 25px;
+  z-index: 10;
+}
+
+.close--modal {
+  border: none;
+  background-color: white;
+  float: right;
+  margin-top: 6px;
+  margin-right: 4px;
+  margin-left: auto;
+}
+.nav--link {
+  color: white;
+  text-shadow: 2px 2px 3px black;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.container--flex--column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container--flex--row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border: solid 2px white;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
+
+.button--black {
+  border: solid 2px black;
+  color: black;
+}
+
+.button--gray {
+  background-color: rgb(58, 64, 71);
+  border: none;
+  margin-bottom: 0;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.button--photos {
+  border: none;
+  background-color: #dddcdc;
+  color: black;
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.booking--section {
+  position: relative;
+  background-color: #f4f4f4;
+  padding-top: 7%;
+  padding-bottom: 7%;
+}
+
+.li--footer {
+  margin: 4%;
+}
+
+/* ----------------------TEXT STYLES----------------------- */
+
+.light--heading {
+  color: #c4c4c4;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.small--gray--text {
+  color: #848484;
+  font-weight: normal;
+  text-align: center;
+}
+
+.small--bolder--text {
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+}
+
+.error--text {
+  margin-top: 0;
+  color: red;
+  font-weight: 900;
+}
+
+.regular--text {
+  color: #5b5b5c;
+  margin-top: 2px;
+  margin-bottom: 8px;
+}
+
+.medium--text {
+  font-weight: normal;
+  color: black;
+  text-align: center;
+}
+
+.big--text {
+  font-weight: bold;
+  color: black;
+  margin-top: 0;
+  text-align: center;
+}
+
+.big--bolder--text {
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+}
+
+#btnLeft {
+  height: 28px;
+  width: 13px;
+  border: none;
+  background-image: url("/images/icons/arrow_left.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#btnRight {
+  height: 28px;
+  width: 13px;
+  border: none;
+  background-image: url("/images/icons/arrow_right.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ---------------Pseudo - classes------------------------ */
+.nav--link:hover,
+.li--footer :hover {
+  background-color: #5b5b5c;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/* ---------------------Media quries------------------------------ */
+
+@media (min-width: 320px) {
+  #gallery {
+    width: 100%;
+    margin-top: 31px;
+    margin-bottom: 50px;
+    height: 400px;
+  }
+  header {
+    height: 480px;
+    margin-bottom: 50px;
+  }
+  nav li {
+    max-width: 30%;
+  }
+  h1 {
+    font-size: 16px;
+    margin-bottom: 0;
+    margin-top: 220px;
+  }
+  .container--text {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  header p {
+    font-size: 10px;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  footer ul {
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+
+  .nav--link {
+    color: white;
+    font-size: 20px;
+    width: 35%;
+  }
+  .light--heading {
+    margin-bottom: 5px;
+  }
+  .light--heading,
+  .small--gray--text,
+  .small--bolder--text,
+  .regular--text {
+    font-size: 10px;
+  }
+  .medium--text {
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .footer--text {
+    margin: 2px;
+  }
+  .big--text {
+    font-size: 13px;
+  }
+  .big--bolder--text {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .button {
+    font-size: 14px;
+  }
+
+  .card p {
+    margin-bottom: 15px;
+  }
+  #about {
+    margin-bottom: 50px;
+  }
+  .big--image {
+    padding: 0;
+    height: auto;
+    max-width: 58%;
+  }
+  .slide {
+    width: 100%;
+    height: 280px;
+    padding: 0;
+    object-fit: cover;
+  }
+  .slider--button--container {
+    position: relative;
+    top: 300px;
+  }
+
+  .slider--span {
+    font-size: 18px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  #travel {
+    margin-bottom: 50px;
+  }
+  .card {
+    margin-top: 20px;
+    margin-bottom: 21px;
+    text-align: center;
+  }
+  .card img {
+    height: auto;
+    width: 100%;
+  }
+  .nav--list {
+    display: block;
+    background-color: rgb(58, 64, 71);
+    position: fixed;
+    transition: all 0.4s;
+    top: -100%;
+    padding-bottom: 45px;
+    width: 100%;
+    opacity: 0.9;
+    z-index: 2;
+  }
+
+  .active .nav--list {
+    transition: all 0.4s ease;
+    top: 0;
+  }
+  .burger {
+    display: block;
+    position: fixed;
+    opacity: 0.45;
+    top: 10px;
+    left: 85%;
+    z-index: 3;
+    height: 30px;
+    width: 40px;
+  }
+  .burger:before,
+  .burger:after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 6px;
+  }
+  .burger:before {
+    bottom: 0;
+  }
+  .burger:after {
+    top: 0;
+  }
+  .burger span {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 100%;
+    height: 6px;
+    background-color: black;
+  }
+  .active .burger:before {
+    transform: rotate(45deg);
+    top: 12px;
+  }
+  .active .burger:after {
+    transform: rotate(-45deg);
+    top: 12px;
+  }
+  .active .burger span {
+    scale: 0;
+  }
+  .text--modal {
+    padding-left: 17px;
+    padding-right: 17px;
+    margin-top: 100px;
+    text-align: center;
+  }
+}
+
+/*-------------------------------- 767 */
+
+@media (min-width: 767px) {
+  h1 {
+    font-size: 22px;
+    margin-bottom: 0;
+    margin-top: 100px;
+  }
+  .burger {
+    display: none;
+  }
+  .button--black {
+    position: relative;
+    top: 30px;
+  }
+  header p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .nav--list {
+    position: relative;
+    display: flex;
+    top: 0;
+    background: none;
+  }
+  #gallery {
+    min-height: 670px;
+  }
+  .slide {
+    height: 500px;
+  }
+  .nav--link {
+    font-size: 25px;
+  }
+  .light--heading {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  .small--gray--text,
+  .small--bolder--text {
+    font-size: 16px;
+  }
+  .regular--text {
+    font-size: 18px;
+  }
+  .medium--text {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .error--text {
+    font-size: 25px;
+  }
+
+  .big--text,
+  .big--bolder--text {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  .slider--button {
+    position: relative;
+    top: 225px;
+  }
+  .slider--span {
+    position: relative;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 225px;
+  }
+  #btnLeft {
+    height: 32px;
+    width: 15px;
+  }
+  #btnRight {
+    height: 32px;
+    width: 15px;
+  }
+
+  .li--footer,
+  .button {
+    font-size: 20px;
+  }
+
+  .big--image {
+    padding: 0;
+    max-width: 60%;
+  }
+
+  .text--modal {
+    margin-top: 190px;
+    font-size: 22px;
+    text-align: center;
+  }
+  .close--modal {
+    padding: 20px;
+    padding-top: 10px;
+    font-size: 25px;
+  }
+  input {
+    font-size: 25px;
+    width: 50%;
+  }
+}
+
+/*----------------------------------- 991 */
+
+@media (min-width: 991px) {
+  h1 {
+    font-size: 25px;
+    margin-top: 140px;
+    margin-bottom: 0;
+  }
+  header {
+    min-height: 600px;
+  }
+
+  .slider--button {
+    position: relative;
+    top: 225px;
+  }
+  .slider--span {
+    position: relative;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 225px;
+  }
+  #btnLeft {
+    height: 32px;
+    width: 15px;
+  }
+  #btnRight {
+    height: 32px;
+    width: 15px;
+  }
+
+  header p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  a.button {
+    margin-bottom: 300px;
+  }
+
+  .light--heading {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  .container--text {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+  .button--black {
+    position: relative;
+    top: 40px;
+  }
+  .small--gray--text,
+  .small--bolder--text {
+    font-size: 18px;
+  }
+  .regular--text {
+    font-size: 20px;
+  }
+  .medium--text {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .error--text {
+    font-size: 25px;
+  }
+
+  .big--text,
+  .big--bolder--text {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+
+  .li--footer,
+  .button {
+    font-size: 25px;
+  }
+
+  .text--modal {
+    margin-top: 240px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .close--modal {
+    padding: 20px;
+    padding-top: 10px;
+    font-size: 25px;
+  }
+  input {
+    font-size: 28px;
+    width: 40%;
+  }
+}
+
+/* ------------------------------1200px */
+@media (min-width: 1200px) {
+  *:focus {
+    border: solid black 6px;
+  }
+  h1 {
+    font-size: 35px;
+    margin-top: 210px;
+    margin-bottom: 0;
+  }
+  header {
+    min-height: 800px;
+  }
+  .nav--link {
+    font-size: 35px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  header p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  footer ul {
+    margin-bottom: 80px;
+  }
+  .button,
+  .li--footer {
+    font-size: 35px;
+  }
+  a.button {
+    margin-bottom: 300px;
+  }
+
+  .big--image {
+    padding: 0;
+    max-width: 60%;
+  }
+  #gallery {
+    min-height: 800px;
+  }
+  .slide {
+    height: 600px;
+  }
+
+  .slider--button {
+    position: relative;
+    top: 325px;
+  }
+  .slider--span {
+    position: relative;
+    font-size: 32px;
+    margin-left: 25x;
+    margin-right: 25px;
+    top: 325px;
+  }
+  #btnLeft {
+    height: 45px;
+    width: 21px;
+  }
+  #btnRight {
+    height: 45px;
+    width: 21px;
+  }
+
+  .container {
+    margin-bottom: 70px;
+  }
+
+  .card img {
+    max-height: 480px;
+    width: 90%;
+  }
+
+  .light--heading {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .button--black {
+    position: relative;
+    top: 40px;
+  }
+  .small--gray--text,
+  .small--bolder--text {
+    font-size: 20px;
+  }
+  .regular--text {
+    font-size: 26px;
+  }
+  .medium--text {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .error--text {
+    font-size: 28px;
+  }
+
+  .big--text,
+  .big--bolder--text {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  .text--modal {
+    margin-top: 300px;
+    font-size: 25px;
+    text-align: center;
+  }
+  .close--modal {
+    padding: 20px;
+    padding-top: 10px;
+    font-size: 25px;
+  }
+  input {
+    font-size: 35px;
+  }
+}
+
+/* ------------------------------------1400px */
+@media (min-width: 1400px) {
+  h1 {
+    font-size: 55px;
+    margin-top: 200px;
+    margin-bottom: 0;
+  }
+
+  .nav--link {
+    font-size: 35px;
+  }
+  header p {
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+  .button {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .button,
+  .li--footer {
+    font-size: 25px;
+  }
+  .li--footer {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  a.button {
+    margin-bottom: 250px;
+  }
+  .container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .container--text {
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+  .container li {
+    max-width: 50%;
+  }
+  article {
+    margin-bottom: 40px;
+  }
+
+  .big--image {
+    max-height: 800px;
+    width: auto;
+  }
+  #gallery {
+    min-height: 700px;
+  }
+  .slide {
+    height: 515px;
+    padding-left: 30%;
+    padding-right: 30%;
+    width: 40%;
+    object-fit: cover;
+  }
+  .slider--span {
+    position: relative;
+    top: 230px;
+  }
+
+  #btnLeft {
+    top: -85px;
+    right: 22%;
+    height: 32px;
+    width: 15px;
+  }
+  #btnRight {
+    top: -85px;
+    right: -22%;
+    height: 32px;
+    width: 15px;
+  }
+
+  .card p {
+    min-height: 100px;
+    margin-bottom: 0;
+  }
+
+  .card h3 {
+    max-width: 90%;
+  }
+  .booking--section {
+    max-height: 280px;
+  }
+  .booking--section div {
+    max-width: 60%;
+  }
+  input {
+    margin-bottom: 0;
+    font-size: 30px;
+    width: 20%;
+  }
+  .booking--section .medium--text {
+    font-size: 18px;
+  }
+
+  .booking--section .big--text,
+  .booking--section .medium--text {
+    margin-bottom: 0;
+  }
+  form {
+    position: relative;
+  }
+  .regular--text {
+    font-size: 28px;
+  }
+  #sendButton {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+  .error--text {
+    position: absolute;
+    top: 280px;
+    font-size: 25px;
+  }
+
+  .booking--section .modal {
+    left: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  .text--modal {
+    margin-top: 140px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .faded {
+    display: none;
+  }
+}
