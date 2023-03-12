@@ -1,20 +1,34 @@
 "use strict";
 
-//---------------Burger menu, activation
+//---------------Burger menu activation-------------------
 const navMenu = document.querySelector("nav");
 const navList = document.querySelector(".nav--list");
-//const body = document.querySelector("body");
-document.querySelector(".burger").addEventListener("click", () => {
+const body = document.querySelector("body");
+const burger = document.querySelector(".burger");
+
+burger.addEventListener("click", () => {
   navMenu.classList.toggle("active");
 });
+
 navList.addEventListener("click", (e) => {
   if (e.target.classList.contains("nav--link")) {
     navMenu.classList.toggle("active");
   }
 });
-//body.addEventListener("click", () => navMenu.classList.remove("active"));
 
-//-----------------Not active buttons
+body.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("nav--list") ||
+    e.target.classList.contains("burger") ||
+    e.target.classList.contains("burger--span")
+  )
+    return;
+  else {
+    navMenu.classList.remove("active");
+  }
+});
+
+//-----------------Not active buttons-----------------------------------
 document.querySelectorAll(".button--not--active").forEach((button) =>
   button.addEventListener("click", (e) => {
     e.preventDefault();
@@ -22,7 +36,7 @@ document.querySelectorAll(".button--not--active").forEach((button) =>
   })
 );
 
-//-----------------Modal activation
+//-----------------Modal activation------------------------------
 const modalWindow = document.querySelector(".modal");
 const sendButton = document.querySelector("#sendButton");
 const closeModalBtn = document.querySelector(".close--modal");
@@ -59,7 +73,7 @@ sendButton.addEventListener("click", showModalWindow);
 closeModalBtn.addEventListener("click", closeModalWindow);
 overlay.addEventListener("click", closeModalWindow);
 
-//---------------------Slider
+//---------------------Slider-----------------------
 const slides = document.querySelectorAll(".slide");
 const rightBtn = document.querySelector("#btnRight");
 const leftBtn = document.querySelector("#btnLeft");
